@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__perplexity__perplexity_ask",
+      "Bash(bun add:*)",
+      "WebFetch(domain:docs.astro.build)",
+      "Bash(bun remove:*)",
+      "Bash(bunx:*)",
+      "mcp__docfork__get-library-docs",
+      "mcp__astro__get-astro-config",
+      "mcp__astro__list-astro-routes",
+      "mcp__astro__get-astro-server-address",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_install",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_snapshot",
+      "Bash(mkdir:*)"
+    ],
+    "deny": []
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "astro"
+  ]
+}
