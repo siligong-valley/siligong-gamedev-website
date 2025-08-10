@@ -20,13 +20,6 @@ export default defineConfig({
     enabled: true, // Enable accessibility checks via Dev Toolbar
   },
   vite: {
-    resolve: {
-      alias: {
-        "@": "./src",
-        "figma:asset": "./src/assets/figma",
-      },
-    },
-
     plugins: [tailwindcss()],
   },
 });

@@ -73,3 +73,4 @@ The website includes sections for:
 
 All components follow consistent patterns and use the established design system for cohesive styling and behavior.
 - ALWAYS USE the Astro MCP whenever possible.
+- When you encounter an error with PlayWright. Take a screenshot to see the error message.

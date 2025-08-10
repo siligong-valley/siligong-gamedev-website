@@ -1,7 +1,6 @@
 import { Separator } from "./ui/separator";
-import siligongLogo from "figma:asset/2ee758f66f1f8612bc72a41c64d213728aefd136.png";
 
-export function Footer() {
+export default function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground py-12">
       <div className="max-w-6xl mx-auto px-6">
@@ -10,14 +9,9 @@ export function Footer() {
             <div className="flex items-center gap-3 mb-4">
               <div className="w-12 h-10 overflow-hidden relative flex items-center">
                 <img
-                  src={siligongLogo}
+                  src={"/images/logo-only.svg"}
                   alt="Siligong Valley Logo"
-                  className="h-auto w-full object-cover object-left absolute left-2"
-                  style={{
-                    minHeight: "40px",
-                    width: "120px",
-                    marginLeft: "-2px",
-                  }}
+                  className="h-full"
                 />
               </div>
               <div>
@@ -28,10 +22,9 @@ export function Footer() {
               </div>
             </div>
             <p className="text-primary-foreground/80 mb-4">
-              Wollongong's premier game development community.
-              Bringing together passionate creators, learners,
-              and innovators in the Illawarra region as part of
-              the broader Siligong Valley ecosystem.
+              Wollongong's premier game development community. Bringing together
+              passionate creators, learners, and innovators in the Illawarra
+              region as part of the broader Siligong Valley ecosystem.
             </p>
             <p className="text-sm text-primary-foreground/60">
               © 2025 Siligong Valley. All rights reserved.
@@ -119,8 +112,8 @@ export function Footer() {
 
         <div className="text-center text-primary-foreground/60">
           <p>
-            Made with ❤️ by the Siligong Valley community in
-            Wollongong, NSW, Australia
+            Made with ❤️ by the Siligong Valley community in Wollongong, NSW,
+            Australia
           </p>
         </div>
       </div>

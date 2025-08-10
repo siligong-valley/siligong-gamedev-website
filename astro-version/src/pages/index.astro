@@ -1,61 +1,20 @@
 ---
-import Layout from '../layouts/Layout.astro';
-// React components will be imported here as we migrate them
-// import Hero from '../components/Hero.tsx';
-// import About from '../components/About.tsx';
-// import Events from '../components/Events.tsx';
-// import Community from '../components/Community.tsx';
-// import Contact from '../components/Contact.tsx';
-// import Footer from '../components/Footer.tsx';
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.tsx";
+import About from "@/components/About";
+import Events from "@/components/Events.tsx";
+import Community from "@/components/Community.tsx";
+import Contact from "@/components/Contact.tsx";
+import Footer from "@/components/Footer.tsx";
 ---
 
 <Layout title="Siligong Gamedev - Wollongong Game Development Community">
-  <div class="min-h-screen">
-    <!-- Islands Architecture Implementation -->
-    
-    <!-- Temporary content while we migrate components -->
-    <section class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/10 to-secondary/20">
-      <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        <h1 class="text-4xl md:text-6xl mb-2 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent uppercase">
-          Siligong Gamedev
-        </h1>
-        <p class="text-lg md:text-xl text-muted-foreground">
-          Part of the Siligong Valley Community
-        </p>
-        <p class="text-xl md:text-2xl text-muted-foreground mb-4">
-          Wollongong's Premier Game Development Community
-        </p>
-        <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-          Join passionate game developers, designers, and
-          enthusiasts in the Illawarra region. Learn, create,
-          and share your gaming projects with like-minded
-          creators.
-        </p>
-        
-        <!-- Test Tailwind v4 classes -->
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <button class="bg-primary text-primary-foreground px-8 py-3 rounded-lg text-lg hover:bg-primary/90 transition-colors">
-            Join Our Community
-          </button>
-          <button class="border border-border bg-background text-foreground px-8 py-3 rounded-lg text-lg hover:bg-muted transition-colors">
-            Next Meetup
-          </button>
-        </div>
-        
-        <div class="mt-8 p-4 bg-card text-card-foreground rounded-lg border">
-          <p class="text-sm text-muted-foreground">
-            ✅ Astro + Tailwind v4 + Islands Architecture Ready
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Component sections will be added here as we migrate them -->
-    <!-- <Hero client:load /> -->
-    <!-- <About client:visible /> -->  
-    <!-- <Events client:visible /> -->
-    <!-- <Community client:visible /> -->
-    <!-- <Contact client:load /> -->
-    <!-- <Footer /> -->
-  </div>
+    <div class="min-h-screen">
+        <Hero />
+        <About />
+        <Events />
+        <Community />
+        <Contact />
+        <Footer />
+    </div>
 </Layout>

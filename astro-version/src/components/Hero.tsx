@@ -1,8 +1,10 @@
 import { Button } from "./ui/button";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import siligongLogo from "figma:asset/2ee758f66f1f8612bc72a41c64d213728aefd136.png";
 
-export function Hero() {
+// Resolve the Figma asset using our asset system
+const siligongLogo = "/images/logo-horz.svg";
+
+function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/10 to-secondary/20 overflow-hidden">
       <div className="absolute inset-0 opacity-20">
@@ -30,20 +32,15 @@ export function Hero() {
           Wollongong's Premier Game Development Community
         </p>
         <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-          Join passionate game developers, designers, and
-          enthusiasts in the Illawarra region. Learn, create,
-          and share your gaming projects with like-minded
-          creators.
+          Join passionate game developers, designers, and enthusiasts in the
+          Illawarra region. Learn, create, and share your gaming projects with
+          like-minded creators.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button size="lg" className="text-lg px-8 py-3">
             Join Our Community
           </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            className="text-lg px-8 py-3"
-          >
+          <Button variant="outline" size="lg" className="text-lg px-8 py-3">
             Next Meetup
           </Button>
         </div>
@@ -51,3 +48,5 @@ export function Hero() {
     </section>
   );
 }
+
+export default Hero;

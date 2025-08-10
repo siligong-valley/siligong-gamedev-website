@@ -1,32 +1,48 @@
 import { Button } from "./ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Label } from "./ui/label";
-import { Mail, MessageSquare, Calendar, Github, Twitter, Youtube } from "lucide-react";
+import {
+  Mail,
+  MessageSquare,
+  Calendar,
+  Github,
+  Twitter,
+  Youtube,
+} from "lucide-react";
 
-export function Contact() {
+export default function Contact() {
   return (
     <section className="py-20 bg-secondary/30">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl mb-6">Join Our Community</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ready to level up your game development journey? Connect with us and become part of the Siligong Valley community!
+            Ready to level up your game development journey? Connect with us and
+            become part of the Siligong Valley community!
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           <div>
             <h3 className="text-2xl md:text-3xl mb-8">Get Connected</h3>
-            
+
             <div className="space-y-6 mb-8">
               <Card>
                 <CardHeader className="pb-4">
                   <div className="flex items-center gap-3">
                     <MessageSquare className="w-6 h-6 text-primary" />
                     <div>
-                      <CardTitle className="text-lg">Discord Community</CardTitle>
+                      <CardTitle className="text-lg">
+                        Discord Community
+                      </CardTitle>
                       <CardDescription>Chat with members 24/7</CardDescription>
                     </div>
                   </div>
@@ -42,12 +58,16 @@ export function Contact() {
                     <Calendar className="w-6 h-6 text-primary" />
                     <div>
                       <CardTitle className="text-lg">Meetup Events</CardTitle>
-                      <CardDescription>RSVP for upcoming events</CardDescription>
+                      <CardDescription>
+                        RSVP for upcoming events
+                      </CardDescription>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <Button variant="outline" className="w-full">View Meetup</Button>
+                  <Button variant="outline" className="w-full">
+                    View Meetup
+                  </Button>
                 </CardContent>
               </Card>
 
@@ -57,7 +77,9 @@ export function Contact() {
                     <Mail className="w-6 h-6 text-primary" />
                     <div>
                       <CardTitle className="text-lg">Newsletter</CardTitle>
-                      <CardDescription>Stay updated with latest news</CardDescription>
+                      <CardDescription>
+                        Stay updated with latest news
+                      </CardDescription>
                     </div>
                   </div>
                 </CardHeader>
@@ -91,7 +113,8 @@ export function Contact() {
               <CardHeader>
                 <CardTitle className="text-xl">Send Us a Message</CardTitle>
                 <CardDescription>
-                  Have questions or want to get involved? We'd love to hear from you!
+                  Have questions or want to get involved? We'd love to hear from
+                  you!
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -107,16 +130,23 @@ export function Contact() {
                 </div>
                 <div>
                   <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" placeholder="john@example.com" />
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="john@example.com"
+                  />
                 </div>
                 <div>
                   <Label htmlFor="subject">Subject</Label>
-                  <Input id="subject" placeholder="I'd like to join the community" />
+                  <Input
+                    id="subject"
+                    placeholder="I'd like to join the community"
+                  />
                 </div>
                 <div>
                   <Label htmlFor="message">Message</Label>
-                  <Textarea 
-                    id="message" 
+                  <Textarea
+                    id="message"
                     placeholder="Tell us about yourself and your interests in game development..."
                     className="min-h-32"
                   />
