@@ -1,0 +1,32 @@
+{
+  "name": "astro-version",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "bun astro dev",
+    "start": "bun astro dev",
+    "build": "bun astro build",
+    "preview": "bun astro preview",
+    "clean": "rm -rf dist",
+    "type-check": "bunx tsc --noEmit",
+    "lint": "bunx eslint src --ext .ts,.tsx,.astro",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/node": "^9.4.0",
+    "@astrojs/react": "^4.3.0",
+    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/vite": "^4.1.11",
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7",
+    "astro": "^5.12.9",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.539.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^4.1.11",
+    "tailwindcss-animate": "^1.0.7"
+  }
+}
