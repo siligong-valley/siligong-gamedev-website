@@ -1,3 +1,4 @@
+import { siteConfig } from "@/config";
 import { Separator } from "./ui/separator";
 
 export default function Footer() {
@@ -98,7 +99,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href={siteConfig.social.siligongValley}
                   className="hover:text-primary-foreground transition-colors"
                 >
                   Siligong Valley

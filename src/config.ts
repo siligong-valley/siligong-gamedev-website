@@ -22,6 +22,7 @@ export const siteConfig = {
     discord: "https://discord.gg/Czd8ufdbEV",
     meetup: "https://www.meetup.com/siligongvalley/",
     github: "https://github.com/siligong-valley",
+    siligongValley: "https://siligongvalley.com",
   },
 
   // Feature Flags
