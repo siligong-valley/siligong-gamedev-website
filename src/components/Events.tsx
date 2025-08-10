@@ -71,7 +71,7 @@ function EventCard({ event, isPast = false }: EventCardProps) {
 
   return (
     <Card
-      className={`${event.featured && !isPast ? "ring-2 ring-primary/20 shadow-lg" : ""} hover:shadow-lg transition-shadow`}
+      className={`${event.featured && !isPast ? "ring-2 ring-primary/20 shadow-lg" : ""} hover:shadow-lg transition-shadow flex flex-col h-full`}
     >
       <CardHeader>
         <div className="flex justify-between items-start mb-2">
@@ -91,12 +91,12 @@ function EventCard({ event, isPast = false }: EventCardProps) {
         </div>
         <CardTitle className="text-xl">{event.title}</CardTitle>
       </CardHeader>
-      <CardContent className="space-y-4">
-        <CardDescription className="text-base">
+      <CardContent className="flex flex-col flex-1">
+        <CardDescription className="text-base mb-4">
           {event.description}
         </CardDescription>
 
-        <div className="space-y-2 text-sm">
+        <div className="space-y-2 text-sm mb-6">
           <div className="flex items-center gap-2 text-muted-foreground">
             <Calendar className="w-4 h-4" />
             <span>{event.date}</span>
@@ -123,8 +123,7 @@ function EventCard({ event, isPast = false }: EventCardProps) {
           <LinkButton
             href={event.eventUrl}
             external
-            className="w-full"
-            variant={event.featured ? "default" : "outline"}
+            className="w-full mt-auto"
           >
             {buttonText}
           </LinkButton>
@@ -178,7 +177,7 @@ export default function Events({ upcoming = [], past = [] }: EventsProps) {
   const pastEvents = useMemo(() => past.slice(0, 3).map(formatEvent), [past]);
 
   return (
-    <section className="py-20 bg-secondary/30">
+    <section className="py-20 bg-secondary/30" id="events">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl mb-6">Upcoming Events</h2>
@@ -204,12 +203,7 @@ export default function Events({ upcoming = [], past = [] }: EventsProps) {
         )}
 
         <div className="text-center mt-12">
-          <LinkButton
-            variant="outline"
-            size="lg"
-            external
-            href={siteConfig.social.meetup}
-          >
+          <LinkButton size="lg" external href={siteConfig.social.meetup}>
             View All Siligong Valley Events
           </LinkButton>
         </div>

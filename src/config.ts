@@ -20,6 +20,7 @@ export const siteConfig = {
   // Social Links & Contact
   social: {
     discord: "https://discord.gg/Czd8ufdbEV",
+    slack: "https://siligong.slack.com/",
     meetup: "https://www.meetup.com/siligongvalley/",
     github: "https://github.com/siligong-valley",
     siligongValley: "https://siligongvalley.com",

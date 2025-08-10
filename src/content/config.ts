@@ -22,22 +22,6 @@ export const collections = {
     }),
   }),
 
-  // Community resources and links
-  community: defineCollection({
-    type: "content",
-    schema: z.object({
-      title: z.string(),
-      description: z.string(),
-      link: z.string().url().optional(),
-      icon: z.string().optional(),
-      category: z
-        .enum(["social", "learning", "tools", "showcase"])
-        .default("social"),
-      featured: z.boolean().default(false),
-      order: z.number().optional(),
-    }),
-  }),
-
   // Blog posts for community updates and tutorials
   blog: defineCollection({
     type: "content",

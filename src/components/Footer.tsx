@@ -32,15 +32,23 @@ export default function Footer() {
             </p>
           </div>
 
-          <div>
+          <div className="col-span-2">
             <h4 className="text-lg mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-primary-foreground/80">
+            <ul className="text-primary-foreground/80 flex flex-wrap gap-x-4">
               <li>
                 <a
-                  href="#about"
+                  href={siteConfig.social.slack}
                   className="hover:text-primary-foreground transition-colors"
                 >
-                  About Us
+                  Slack
+                </a>
+              </li>
+              <li>
+                <a
+                  href={siteConfig.social.discord}
+                  className="hover:text-primary-foreground transition-colors"
+                >
+                  Discord
                 </a>
               </li>
               <li>
@@ -53,26 +61,26 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#projects"
+                  href={siteConfig.social.siligongValley}
                   className="hover:text-primary-foreground transition-colors"
                 >
-                  Projects
+                  Siligong Valley
                 </a>
               </li>
               <li>
                 <a
-                  href="#contact"
+                  href={siteConfig.social.github}
                   className="hover:text-primary-foreground transition-colors"
                 >
-                  Contact
+                  GitHub
                 </a>
               </li>
             </ul>
           </div>
 
-          <div>
+          <div className="hidden">
             <h4 className="text-lg mb-4">Resources</h4>
-            <ul className="space-y-2 text-primary-foreground/80">
+            <ul className="gap-y-2 text-primary-foreground/80 flex flex-wrap">
               <li>
                 <a
                   href="#"

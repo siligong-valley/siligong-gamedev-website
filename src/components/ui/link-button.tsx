@@ -47,7 +47,7 @@ const LinkButton = React.forwardRef<HTMLAnchorElement, LinkButtonProps>(
       size,
       external = false,
       children,
-      noIcon = false,
+      noIcon = size === "icon",
       ...props
     },
     ref,

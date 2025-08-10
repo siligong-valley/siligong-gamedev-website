@@ -9,18 +9,14 @@ import {
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Label } from "./ui/label";
-import {
-  Mail,
-  MessageSquare,
-  Calendar,
-  Github,
-  Twitter,
-  Youtube,
-} from "lucide-react";
+import { Mail, MessageSquare, Calendar } from "lucide-react";
+import { LinkButton } from "./ui/link-button";
+import { siteConfig } from "@/config";
+import { SiGithub, SiSlack, SiDiscord } from "@icons-pack/react-simple-icons";
 
 export default function Contact() {
   return (
-    <section className="py-20 bg-secondary/30">
+    <section className="py-20 bg-secondary/30" id="join">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl mb-6">Join Our Community</h2>
@@ -30,7 +26,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div>
           <div>
             <h3 className="text-2xl md:text-3xl mb-8">Get Connected</h3>
 
@@ -38,77 +34,111 @@ export default function Contact() {
               <Card>
                 <CardHeader className="pb-4">
                   <div className="flex items-center gap-3">
-                    <MessageSquare className="w-6 h-6 text-primary" />
+                    <MessageSquare className="min-w-6 h-6 text-primary" />
                     <div>
                       <CardTitle className="text-lg">
-                        Discord Community
+                        Siligong Valley Slack
                       </CardTitle>
-                      <CardDescription>Chat with members 24/7</CardDescription>
+                      <CardDescription>
+                        Join the Siligong Valley Slack community to connect with
+                        the wider community, share knowledge, and collaborate on
+                        projects.
+                      </CardDescription>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <Button className="w-full">Join Discord</Button>
+                  <LinkButton
+                    className="w-full"
+                    href={siteConfig.social.slack}
+                    external
+                  >
+                    Join Slack
+                  </LinkButton>
                 </CardContent>
               </Card>
 
               <Card>
                 <CardHeader className="pb-4">
                   <div className="flex items-center gap-3">
-                    <Calendar className="w-6 h-6 text-primary" />
+                    <MessageSquare className="min-w-6 h-6 text-primary" />
                     <div>
-                      <CardTitle className="text-lg">Meetup Events</CardTitle>
+                      <CardTitle className="text-lg">
+                        Siligong Valley Discord
+                      </CardTitle>
                       <CardDescription>
-                        RSVP for upcoming events
+                        Talk gamedev, play games, and chill with the community.
                       </CardDescription>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <Button variant="outline" className="w-full">
-                    View Meetup
-                  </Button>
+                  <LinkButton
+                    className="w-full"
+                    href={siteConfig.social.discord}
+                    external
+                  >
+                    Join Discord
+                  </LinkButton>
                 </CardContent>
               </Card>
 
               <Card>
                 <CardHeader className="pb-4">
                   <div className="flex items-center gap-3">
-                    <Mail className="w-6 h-6 text-primary" />
+                    <Calendar className="min-w-6 h-6 text-primary" />
                     <div>
-                      <CardTitle className="text-lg">Newsletter</CardTitle>
+                      <CardTitle className="text-lg">Meetups</CardTitle>
                       <CardDescription>
-                        Stay updated with latest news
+                        RSVP for upcoming events.
                       </CardDescription>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <div className="flex gap-2">
-                    <Input placeholder="your@email.com" className="flex-1" />
-                    <Button>Subscribe</Button>
-                  </div>
+                  <LinkButton
+                    className="w-full"
+                    external
+                    href={siteConfig.social.meetup}
+                  >
+                    View Meetups
+                  </LinkButton>
                 </CardContent>
               </Card>
             </div>
 
-            <div>
-              <h4 className="text-lg mb-4">Follow Us</h4>
+            <div className="hidden">
+              <h4 className="text-lg mb-4">Get in touch</h4>
               <div className="flex gap-4">
-                <Button variant="outline" size="icon">
-                  <Twitter className="w-4 h-4" />
-                </Button>
-                <Button variant="outline" size="icon">
-                  <Github className="w-4 h-4" />
-                </Button>
-                <Button variant="outline" size="icon">
-                  <Youtube className="w-4 h-4" />
-                </Button>
+                <LinkButton
+                  variant="outline"
+                  size="icon"
+                  external
+                  href={siteConfig.social.slack}
+                >
+                  <SiSlack className="w-4 h-4" />
+                </LinkButton>
+                <LinkButton
+                  variant="outline"
+                  size="icon"
+                  external
+                  href={siteConfig.social.discord}
+                >
+                  <SiDiscord className="w-4 h-4" />
+                </LinkButton>
+                <LinkButton
+                  variant="outline"
+                  size="icon"
+                  external
+                  href={siteConfig.social.github}
+                >
+                  <SiGithub className="w-4 h-4" />
+                </LinkButton>
               </div>
             </div>
           </div>
 
-          <div>
+          <div className="hidden">
             <Card>
               <CardHeader>
                 <CardTitle className="text-xl">Send Us a Message</CardTitle>
