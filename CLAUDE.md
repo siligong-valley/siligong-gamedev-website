@@ -72,3 +72,4 @@ The website includes sections for:
 - Footer with social links
 
 All components follow consistent patterns and use the established design system for cohesive styling and behavior.
+- ALWAYS USE the Astro MCP whenever possible.

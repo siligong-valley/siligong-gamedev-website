@@ -1,0 +1,29 @@
+{
+  "name": "siligong-gamedev-site",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Siligong Gamedev Community Website - React to Astro Migration",
+  "scripts": {
+    "dev": "cd astro-version && bun run dev",
+    "start": "cd astro-version && bun run start",
+    "build": "cd astro-version && bun run build",
+    "preview": "cd astro-version && bun run preview",
+    "clean": "cd astro-version && bun run clean",
+    "type-check": "cd astro-version && bun run type-check",
+    "lint": "cd astro-version && bun run lint",
+    "astro": "cd astro-version && bun run astro"
+  },
+  "keywords": [
+    "astro",
+    "react",
+    "tailwind",
+    "gamedev",
+    "community",
+    "wollongong"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "."
+  },
+  "license": "MIT"
+}

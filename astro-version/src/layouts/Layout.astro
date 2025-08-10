@@ -1,0 +1,84 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'article';
+}
+
+const { 
+  title, 
+  description = "Wollongong's Premier Game Development Community - Join passionate game developers, designers, and enthusiasts in the Illawarra region.",
+  image = "/images/og-image.jpg",
+  type = "website"
+} = Astro.props;
+
+// Construct full URLs for social media
+const site = Astro.site ?? 'http://localhost:4321';
+const canonicalURL = new URL(Astro.url.pathname, site);
+const socialImageURL = new URL(image, site);
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Meta Tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={socialImageURL} />
+    <meta property="og:site_name" content="Siligong Gamedev" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={socialImageURL} />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    
+    <!-- Fonts - Preload for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Theme Color for mobile browsers -->
+    <meta name="theme-color" content="#030213" />
+    <meta name="msapplication-TileColor" content="#030213" />
+    
+    <!-- Accessibility - Reduced motion -->
+    <meta name="color-scheme" content="light dark" />
+  </head>
+  <body>
+    <!-- Skip to main content for screen readers -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-primary-foreground px-4 py-2 rounded-md z-50">
+      Skip to main content
+    </a>
+    
+    <main id="main-content" role="main">
+      <slot />
+    </main>
+    
+    <!-- Load theme script before content to prevent flash -->
+    <script>
+      // Theme handling will be added here when we migrate the theme system
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/globals.css';
+</style>
