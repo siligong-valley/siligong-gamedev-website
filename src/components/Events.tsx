@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import { siteConfig } from "@/config";
 import dayjs from "dayjs";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 interface EventData {
   id: string;
@@ -43,7 +43,8 @@ interface EventData {
 }
 
 interface EventsProps {
-  events?: EventData[];
+  upcoming?: EventData[];
+  past?: EventData[];
 }
 
 interface FormattedEvent {
@@ -133,52 +134,48 @@ function EventCard({ event, isPast = false }: EventCardProps) {
   );
 }
 
-export default function Events({ events = [] }: EventsProps) {
+// Format events for display
+const formatEvent = (event: EventData) => {
+  const startDate = dayjs(event.data.date);
+  const endDate = event.data.endDate ? dayjs(event.data.endDate) : null;
+
+  // Format date display
+  let dateDisplay: string;
+  if (endDate) {
+    // Multi-day event
+    if (startDate.month() === endDate.month()) {
+      // Same month
+      dateDisplay = `${startDate.format("D")}-${endDate.format("D MMMM YYYY")}`;
+    } else {
+      // Different months
+      dateDisplay = `${startDate.format("D MMMM YYYY")} - ${endDate.format("D MMMM YYYY")}`;
+    }
+  } else {
+    // Single day event
+    dateDisplay = startDate.format("D MMMM YYYY");
+  }
+
+  return {
+    title: event.data.title,
+    date: dateDisplay,
+    time: event.data.time,
+    location: event.data.location,
+    attendees: event.data.attendees,
+    type: event.data.category || event.data.tags?.[0] || "Event",
+    description: event.data.description,
+    featured: event.data.featured || false,
+    eventUrl: event.data.eventUrl,
+  };
+};
+
+export default function Events({ upcoming = [], past = [] }: EventsProps) {
   const [showPastEvents, setShowPastEvents] = useState(true);
 
-  // Separate past and upcoming events
-  const now = dayjs();
-  const upcoming = events.filter((event) =>
-    dayjs(event.data.date).isAfter(now),
+  const upcomingEvents = useMemo(
+    () => upcoming.slice(0, 6).map(formatEvent),
+    [upcoming],
   );
-  const past = events.filter((event) => dayjs(event.data.date).isBefore(now));
-
-  // Format events for display
-  const formatEvent = (event: EventData) => {
-    const startDate = dayjs(event.data.date);
-    const endDate = event.data.endDate ? dayjs(event.data.endDate) : null;
-
-    // Format date display
-    let dateDisplay: string;
-    if (endDate) {
-      // Multi-day event
-      if (startDate.month() === endDate.month()) {
-        // Same month
-        dateDisplay = `${startDate.format("D")}-${endDate.format("D MMMM YYYY")}`;
-      } else {
-        // Different months
-        dateDisplay = `${startDate.format("D MMMM YYYY")} - ${endDate.format("D MMMM YYYY")}`;
-      }
-    } else {
-      // Single day event
-      dateDisplay = startDate.format("D MMMM YYYY");
-    }
-
-    return {
-      title: event.data.title,
-      date: dateDisplay,
-      time: event.data.time,
-      location: event.data.location,
-      attendees: event.data.attendees,
-      type: event.data.category || event.data.tags?.[0] || "Event",
-      description: event.data.description,
-      featured: event.data.featured || false,
-      eventUrl: event.data.eventUrl,
-    };
-  };
-
-  const upcomingEvents = upcoming.slice(0, 6).map(formatEvent);
-  const pastEvents = past.slice(0, 6).map(formatEvent);
+  const pastEvents = useMemo(() => past.slice(0, 3).map(formatEvent), [past]);
 
   return (
     <section className="py-20 bg-secondary/30">
