@@ -1,5 +1,6 @@
 import { Button } from "./ui/button";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { siteConfig } from "@/config";
 
 // Resolve the Figma asset using our asset system
 const siligongLogo = "/images/logo-horz.svg";
@@ -38,10 +39,10 @@ function Hero() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button size="lg" className="text-lg px-8 py-3">
-            Join Our Community
+            {siteConfig.content.joinCommunityButton}
           </Button>
           <Button variant="outline" size="lg" className="text-lg px-8 py-3">
-            Next Meetup
+            {siteConfig.content.nextMeetupButton}
           </Button>
         </div>
       </div>

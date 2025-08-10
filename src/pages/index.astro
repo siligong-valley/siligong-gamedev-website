@@ -1,4 +1,5 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.tsx";
 import About from "@/components/About";
@@ -6,13 +7,19 @@ import Events from "@/components/Events.tsx";
 import Community from "@/components/Community.tsx";
 import Contact from "@/components/Contact.tsx";
 import Footer from "@/components/Footer.tsx";
+
+// Fetch all events and sort by date
+const allEvents = await getCollection("events");
+const upcomingEvents = allEvents.sort(
+    (a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime(),
+);
 ---
 
 <Layout title="Siligong Gamedev - Wollongong Game Development Community">
     <div class="min-h-screen">
         <Hero />
         <About />
-        <Events />
+        <Events client:load events={upcomingEvents} />
         <Community />
         <Contact />
         <Footer />
