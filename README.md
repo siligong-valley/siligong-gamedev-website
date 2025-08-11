@@ -1,10 +1,6 @@
-# Astro Starter Kit: Minimal
+# Siligong Gamedev Website
 
-```sh
-bun create astro@latest -- --template minimal
-```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Website for the Siligong Gamedev community, part of the Siligong Valley Community in Wollongong. Built with Astro, React, and Tailwind CSS.
 
 ## 🚀 Project Structure
 
@@ -38,6 +34,33 @@ All commands are run from the root of the project, from a terminal:
 | `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `bun astro -- --help` | Get help using the Astro CLI                     |
 
+## 🚀 Deployment
+
+This site automatically deploys to GitHub Pages when changes are pushed to the `main` branch.
+
+### Setup GitHub Pages
+
+1. Go to your repository's **Settings** → **Pages**
+2. Under **Source**, select **GitHub Actions**
+3. The workflow will automatically run on the next push to `main`
+
+### Manual Deployment
+
+You can also trigger a deployment manually:
+1. Go to the **Actions** tab in your repository
+2. Select the "Deploy to GitHub Pages" workflow
+3. Click "Run workflow" → "Run workflow"
+
+### Deployment URL
+
+Once deployed, your site will be available at:
+- `https://[your-username].github.io/[repository-name]/`
+
+To use a custom domain:
+1. Add a `CNAME` file in the `public/` directory with your domain
+2. Configure your domain's DNS to point to GitHub Pages
+
 ## 👀 Want to learn more?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- [Astro Documentation](https://docs.astro.build)
+- [GitHub Pages Documentation](https://docs.github.com/en/pages)
