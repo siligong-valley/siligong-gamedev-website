@@ -1,5 +1,6 @@
 import { siteConfig } from "@/config";
 import { Separator } from "./ui/separator";
+import siligongLogoOnly from "@/assets/images/logo-only.svg";
 
 export default function Footer() {
   return (
@@ -10,7 +11,7 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-4">
               <div className="w-12 h-10 overflow-hidden relative flex items-center">
                 <img
-                  src={"/images/logo-only.svg"}
+                  src={siligongLogoOnly.src}
                   alt="Siligong Valley Logo"
                   className="h-full"
                 />

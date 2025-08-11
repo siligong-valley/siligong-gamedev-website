@@ -2,9 +2,7 @@ import { Button } from "./ui/button";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { siteConfig } from "@/config";
 import { LinkButton } from "./ui/link-button";
-
-// Resolve the Figma asset using our asset system
-const siligongLogo = "/images/logo-horz.svg";
+import siligongLogo from "@/assets/images/logo-horz.svg";
 
 function Hero() {
   return (
@@ -19,7 +17,7 @@ function Hero() {
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
         <div className="mb-8">
           <img
-            src={siligongLogo}
+            src={siligongLogo.src}
             alt="Siligong Valley Logo"
             className="w-48 md:w-60 h-auto mx-auto mb-6"
           />
