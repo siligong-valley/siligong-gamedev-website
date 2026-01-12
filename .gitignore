@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # Claude
 .claude/settings.local.json
+
+# Local planning docs
+docs/plans/
